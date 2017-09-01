@@ -15,9 +15,10 @@ class App extends Component {
       dataItems:[...this.state.dataItems, item]
     });
   }
-  updateItems(items) {
+  updateItems(itemIndex) {
+    let newDataItems = this.state.dataItems.filter((item, index) => index !== itemIndex);
     this.setState({
-      dataItems:items
+      dataItems: newDataItems
     });
   }
   render() {
